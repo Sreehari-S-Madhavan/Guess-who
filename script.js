@@ -135,7 +135,7 @@ const wordCategories = {
       {"word": "Nemu Kurotsuchi", "clue": "Bleach"},
       {"word": "Mayuri Kurotsuchi", "clue": "Bleach"},
       {"word": "Tien Shinhan", "clue": "Dragon Ball"},
-      {"word": "Yamcha", "clue": "Dragon Ball"},
+      {"word": "Yamcha", "clue": "Dragon Ball" },
       {"word": "Videl", "clue": "Dragon Ball"},
       {"word": "Android 17", "clue": "Dragon Ball"},
       {"word": "Master Roshi", "clue": "Dragon Ball"},
@@ -1160,153 +1160,180 @@ const wordCategories = {
 let players = [];
 let currentIndex = 0;
 let spyIndex = -1;
-let chosenWordObject = null; // Renamed 'chosen' to 'chosenWordObject' for clarity
+let chosenWordObject = null;
 let votes = {};
-let currentCategory = ""; // Renamed 'category' to 'currentCategory' for clarity
+let currentCategory = "";
+
+// Get DOM elements for easier access (Good practice to get them once)
+const setupDiv = document.getElementById("setup");
+const roleRevealDiv = document.getElementById("roleReveal");
+const votingDiv = document.getElementById("voting");
+const resultDiv = document.getElementById("result");
+
+const playerLabel = document.getElementById("playerLabel");
+const roleText = document.getElementById("roleText");
+const roleActionButton = document.getElementById("roleActionButton"); // This needs an ID in HTML!
+const numPlayersInput = document.getElementById("numPlayers");
+const categorySelect = document.getElementById("categorySelect");
 
 /**
-* Initializes the game when the window loads.
-* Populates the category select dropdown.
-*/
+ * Initializes the game when the window loads.
+ * Populates the category select dropdown.
+ */
 window.onload = () => {
-  const categorySelect = document.getElementById("categorySelect");
-  for (const cat in wordCategories) {
-      const option = document.createElement("option");
-      option.value = cat;
-      option.textContent = cat;
-      categorySelect.appendChild(option);
-  }
+    // Assuming wordCategories is defined globally or imported elsewhere.
+    // Make sure your wordCategories object is included in your script.js or linked before this script.
+    for (const cat in wordCategories) {
+        const option = document.createElement("option");
+        option.value = cat;
+        option.textContent = cat;
+        categorySelect.appendChild(option);
+    }
 };
 
 /**
-* Starts the game.
-* Validates player count, assigns roles (Civilian/Spy), and displays the first player's role.
-*/
+ * Starts the game.
+ * Validates player count, assigns roles (Civilian/Spy), and prepares for the first player's role reveal.
+ */
 function startGame() {
-  const numPlayersInput = document.getElementById("numPlayers");
-  const num = parseInt(numPlayersInput.value);
+    const num = parseInt(numPlayersInput.value);
 
-  if (isNaN(num) || num < 3 || num > 6) {
-      alert("Please enter a number of players between 3 and 6.");
-      return;
-  }
+    if (isNaN(num) || num < 3 || num > 6) {
+        alert("Please enter a number of players between 3 and 6.");
+        return;
+    }
 
-  currentCategory = document.getElementById("categorySelect").value;
-  const wordList = wordCategories[currentCategory];
+    currentCategory = categorySelect.value;
+    const wordList = wordCategories[currentCategory];
 
-  if (!wordList || wordList.length === 0) {
-      alert("Selected category has no words. Please choose another category.");
-      return;
-  }
+    if (!wordList || wordList.length === 0) {
+        alert("Selected category has no words. Please choose another category.");
+        return;
+    }
 
-  // Randomly select a word/clue for the round
-  chosenWordObject = wordList[Math.floor(Math.random() * wordList.length)];
+    // Randomly select a word/clue for the round
+    chosenWordObject = wordList[Math.floor(Math.random() * wordList.length)];
 
-  // Initialize players and assign roles
-  players = new Array(num).fill("Civilian");
-  spyIndex = Math.floor(Math.random() * num);
-  players[spyIndex] = "Spy";
+    // Initialize players and assign roles
+    players = new Array(num).fill("Civilian");
+    spyIndex = Math.floor(Math.random() * num);
+    players[spyIndex] = "Spy";
 
-  // Reset votes and current player index
-  votes = {};
-  currentIndex = 0;
+    // Reset votes and current player index
+    votes = {};
+    currentIndex = 0; // Start with Player 1
 
-  // Transition UI from setup to role reveal
-  document.getElementById("setup").classList.add("hidden");
-  document.getElementById("roleReveal").classList.remove("hidden");
-  showRole();
+    // Transition UI from setup to role reveal
+    setupDiv.classList.add("hidden");
+    roleRevealDiv.classList.remove("hidden");
+
+    // Prepare the role reveal for the first player
+    playerLabel.innerText = `Player ${currentIndex + 1}`;
+    roleText.innerText = "Tap to reveal your role.";
+    roleText.classList.add("hidden"); // Role text is hidden by default
+    roleActionButton.onclick = revealCurrentPlayerRole; // Set action for first tap
+    roleActionButton.innerText = "Reveal Role";
 }
 
 /**
-* Displays the current player's role and either the word or the clue.
-*/
-function showRole() {
-  document.getElementById("playerLabel").innerText = `Player ${currentIndex + 1}`;
-  const roleTextElement = document.getElementById("roleText");
-
-  if (players[currentIndex] === "Spy") {
-      roleTextElement.innerText = `You are the SPY. Your clue is: "${chosenWordObject.clue}"`;
-  } else {
-      roleTextElement.innerText = `You are a CIVILIAN. The word is: "${chosenWordObject.word}"`;
-  }
+ * Reveals the current player's role.
+ * Changes button text to "Hide & Pass".
+ */
+function revealCurrentPlayerRole() {
+    if (players[currentIndex] === "Spy") {
+        roleText.innerText = `You are the SPY. Your clue is: "${chosenWordObject.clue}"`;
+    } else {
+        roleText.innerText = `You are a CIVILIAN. The word is: "${chosenWordObject.word}"`;
+    }
+    roleText.classList.remove("hidden"); // Show the role text
+    // Update button text for the next action: Hide & Pass
+    roleActionButton.innerText = `Hide & Pass to Player ${currentIndex + 2 > players.length ? 'Vote' : currentIndex + 2}`;
+    roleActionButton.onclick = hideAndPassRole; // Set action for the next tap
 }
 
 /**
-* Moves to the next player's role reveal or transitions to the voting phase.
-*/
-function nextPlayer() {
-  currentIndex++;
-  if (currentIndex < players.length) {
-      showRole();
-  } else {
-      // All players have seen their role, move to voting
-      document.getElementById("roleReveal").classList.add("hidden");
-      document.getElementById("voting").classList.remove("hidden");
-      renderVotingButtons();
-  }
+ * Hides the current player's role and prepares for the next player or transitions to the voting phase.
+ */
+function hideAndPassRole() {
+    roleText.classList.add("hidden"); // Hide the role text again
+    currentIndex++; // Move to the next player
+
+    if (currentIndex < players.length) {
+        // Still players to reveal roles
+        playerLabel.innerText = `Player ${currentIndex + 1}`;
+        roleText.innerText = "Tap to reveal your role."; // Prompt for the next player
+        roleActionButton.innerText = "Reveal Role"; // Reset button text
+        roleActionButton.onclick = revealCurrentPlayerRole; // Reset action for the next player
+    } else {
+        // All players have viewed their roles, move to voting
+        roleRevealDiv.classList.add("hidden");
+        votingDiv.classList.remove("hidden");
+        renderVotingButtons();
+    }
 }
 
 /**
-* Renders the voting buttons for each player.
-*/
+ * Renders the voting buttons for each player.
+ */
 function renderVotingButtons() {
-  const voteDiv = document.getElementById("voteButtons");
-  voteDiv.innerHTML = ""; // Clear previous buttons
+    const voteButtonsDiv = document.getElementById("voteButtons");
+    voteButtonsDiv.innerHTML = ""; // Clear previous buttons
 
-  for (let i = 0; i < players.length; i++) {
-      const btn = document.createElement("button");
-      btn.innerText = `Vote Player ${i + 1}`;
-      // Attach click event to cast a vote for the corresponding player index
-      btn.onclick = () => castVote(i);
-      voteDiv.appendChild(btn);
-  }
+    for (let i = 0; i < players.length; i++) {
+        const btn = document.createElement("button");
+        btn.innerText = `Vote Player ${i + 1}`;
+        btn.onclick = () => castVote(i); // Attach click event
+        voteButtonsDiv.appendChild(btn);
+    }
 }
 
 /**
-* Records a vote for a specific player and checks if all votes are in.
-* @param {number} votedPlayerIndex - The index of the player being voted for.
-*/
+ * Records a vote for a specific player and checks if all votes are in.
+ * @param {number} votedPlayerIndex - The index of the player being voted for.
+ */
 function castVote(votedPlayerIndex) {
-  // Increment vote count for the voted player
-  votes[votedPlayerIndex] = (votes[votedPlayerIndex] || 0) + 1;
+    votes[votedPlayerIndex] = (votes[votedPlayerIndex] || 0) + 1;
 
-  // Check if all players have cast their vote
-  const totalVotesCast = Object.values(votes).reduce((sum, count) => sum + count, 0);
-  if (totalVotesCast === players.length) { // Each player votes once
-      checkResult();
-  }
+    // A simple voting mechanism where any click increments a vote.
+    // For a strict "each player votes once" pass-and-play style,
+    // you'd need a similar reveal/hide mechanism for voting:
+    // "Player X, cast your vote" -> Reveal buttons -> "Hide & Pass Vote"
+    // For now, it proceeds once total clicks equals player count.
+
+    const totalVotesCast = Object.values(votes).reduce((sum, count) => sum + count, 0);
+    if (totalVotesCast === players.length) {
+        checkResult();
+    }
 }
 
 /**
-* Determines the outcome of the game based on the votes.
-*/
+ * Determines the outcome of the game based on the votes.
+ */
 function checkResult() {
-  let mostVotedPlayerIndex = -1;
-  let maxVotes = 0;
-  let tied = false;
+    let mostVotedPlayerIndex = -1;
+    let maxVotes = 0;
+    let tied = false;
 
-  // Find the player with the most votes
-  for (const playerIndex in votes) {
-      if (votes[playerIndex] > maxVotes) {
-          maxVotes = votes[playerIndex];
-          mostVotedPlayerIndex = parseInt(playerIndex);
-          tied = false; // Reset tied flag if a new max is found
-      } else if (votes[playerIndex] === maxVotes) {
-          tied = true; // Set tied flag if another player has the same max votes
-      }
-  }
+    for (const playerIndex in votes) {
+        if (votes[playerIndex] > maxVotes) {
+            maxVotes = votes[playerIndex];
+            mostVotedPlayerIndex = parseInt(playerIndex);
+            tied = false;
+        } else if (votes[playerIndex] === maxVotes) {
+            tied = true;
+        }
+    }
 
-  const resultTextElement = document.getElementById("resultText");
+    const resultTextElement = document.getElementById("resultText");
 
-  if (tied) {
-      resultTextElement.innerText = `It's a tie! The real SPY was Player ${spyIndex + 1}. Spy wins!`;
-  } else if (mostVotedPlayerIndex === spyIndex) {
-      resultTextElement.innerText = `Player ${spyIndex + 1} was the SPY! Civilians win! The word was: "${chosenWordObject.word}".`;
-  } else {
-      resultTextElement.innerText = `Wrong guess! The real SPY was Player ${spyIndex + 1}. Spy wins! The word was: "${chosenWordObject.word}".`;
-  }
+    if (tied) {
+        resultTextElement.innerText = `It's a tie! The real SPY was Player ${spyIndex + 1}. Spy wins! The word was: "${chosenWordObject.word}".`;
+    } else if (mostVotedPlayerIndex === spyIndex) {
+        resultTextElement.innerText = `Player ${spyIndex + 1} was the SPY! Civilians win! The word was: "${chosenWordObject.word}".`;
+    } else {
+        resultTextElement.innerText = `Wrong guess! The real SPY was Player ${spyIndex + 1}. Spy wins! The word was: "${chosenWordObject.word}".`;
+    }
 
-  // Transition UI to display results
-  document.getElementById("voting").classList.add("hidden");
-  document.getElementById("result").classList.remove("hidden");
+    votingDiv.classList.add("hidden");
+    resultDiv.classList.remove("hidden");
 }
