@@ -1,6 +1,6 @@
 const wordCategories = {
   "Anime": [
-     {"word": "Monkey D. Luffy", "clue": "One Piece"},
+    {"word": "Monkey D. Luffy", "clue": "One Piece"},
     {"word": "Roronoa Zoro", "clue": "One Piece"},
     {"word": "Nami", "clue": "One Piece"},
     {"word": "Usopp", "clue": "One Piece"},
@@ -20,87 +20,36 @@ const wordCategories = {
     {"word": "Portgas D. Ace", "clue": "One Piece"},
     {"word": "Sabo", "clue": "One Piece"},
     {"word": "Monkey D. Garp", "clue": "One Piece"},
-    {"word": "Smoker", "clue": "One Piece"},
-    {"word": "Tashigi", "clue": "One Piece"},
-    {"word": "Akainu (Sakazuki)", "clue": "One Piece"},
-    {"word": "Kuzan (Aokiji)", "clue": "One Piece"},
-    {"word": "Borsalino (Kizaru)", "clue": "One Piece"},
-    {"word": "Issho (Fujitora)", "clue": "One Piece"},
-    {"word": "Sengoku", "clue": "One Piece"},
-    {"word": "Trafalgar D. Water Law", "clue": "One Piece"},
-    {"word": "Eustass Kid", "clue": "One Piece"},
-    {"word": "Basil Hawkins", "clue": "One Piece"},
-    {"word": "X Drake", "clue": "One Piece"},
-    {"word": "Scratchmen Apoo", "clue": "One Piece"},
-    {"word": "Capone Bege", "clue": "One Piece"},
-    {"word": "Urouge", "clue": "One Piece"},
-    {"word": "Jewelry Bonney", "clue": "One Piece"},
-    {"word": "Crocodile", "clue": "One Piece"},
-    {"word": "Donquixote Doflamingo", "clue": "One Piece"},
-    {"word": "Dracule Mihawk", "clue": "One Piece"},
-    {"word": "Bartholomew Kuma", "clue": "One Piece"},
-    {"word": "Boa Hancock", "clue": "One Piece"},
-    {"word": "Gecko Moria", "clue": "One Piece"},
-    {"word": "Buggy", "clue": "One Piece"},
-    {"word": "Jinbe", "clue": "One Piece"},
-    {"word": "Nefeltari Vivi", "clue": "One Piece"},
-    {"word": "Vinsmoke Reiju", "clue": "One Piece"},
-    {"word": "Kozuki Oden", "clue": "One Piece"},
-    {"word": "Yamato", "clue": "One Piece"},
     {"word": "Trafalgar Law", "clue": "One Piece"},
     {"word": "Eustass Kid", "clue": "One Piece"},
-    {"word": "Charlotte Katakuri", "clue": "One Piece"},
-     {"word": "Ichigo Kurosaki", "clue": "Bleach"},
-    {"word": "Rukia Kuchiki", "clue": "Bleach"},
-    {"word": "Orihime Inoue", "clue": "Bleach"},
-    {"word": "Uryu Ishida", "clue": "Bleach"},
-    {"word": "Yasutora 'Chad' Sado", "clue": "Bleach"},
-    {"word": "Renji Abarai", "clue": "Bleach"},
-    {"word": "Byakuya Kuchiki", "clue": "Bleach"},
-    {"word": "Toshiro Hitsugaya", "clue": "Bleach"},
-    {"word": "Shunsui Kyoraku", "clue": "Bleach"},
-    {"word": "Jushiro Ukitake", "clue": "Bleach"},
-    {"word": "Genryusai Shigekuni Yamamoto", "clue": "Bleach"},
-    {"word": "Sosuke Aizen", "clue": "Bleach"},
-    {"word": "Gin Ichimaru", "clue": "Bleach"},
-    {"word": "Kaname Tosen", "clue": "Bleach"},
-    {"word": "Yoruichi Shihoin", "clue": "Bleach"},
-    {"word": "Kisuke Urahara", "clue": "Bleach"},
-    {"word": "Nelliel Tu Odelschwanck", "clue": "Bleach"},
-    {"word": "Grimmjow Jaegerjaquez", "clue": "Bleach"},
-    {"word": "Ulquiorra Cifer", "clue": "Bleach"},
-    {"word": "Tier Harribel", "clue": "Bleach"},
-    {"word": "Barragan Louisenbairn", "clue": "Bleach"},
-    {"word": "Coyote Starrk", "clue": "Bleach"},
-    {"word": "Szayelaporro Granz", "clue": "Bleach"},
-    {"word": "Aaroniero Arruruerie", "clue": "Bleach"},
-    {"word": "Zommari Rureaux", "clue": "Bleach"},
-    {"word": "Yammy Llargo", "clue": "Bleach"},
-    {"word": "Nnoitra Gilga", "clue": "Bleach"},
-    {"word": "Mayuri Kurotsuchi", "clue": "Bleach"},
-    {"word": "Kenpachi Zaraki", "clue": "Bleach"},
-    {"word": "Yachiru Kusajishi", "clue": "Bleach"},
-    {"word": "Rangiku Matsumoto", "clue": "Bleach"},
-    {"word": "Izuru Kira", "clue": "Bleach"},
-    {"word": "Momo Hinamori", "clue": "Bleach"},
-    {"word": "Shinji Hirako", "clue": "Bleach"},
-    {"word": "Hiyori Sarugaki", "clue": "Bleach"},
-    {"word": "Mashiro Kuna", "clue": "Bleach"},
-    {"word": "Love Aikawa", "clue": "Bleach"},
-    {"word": "Rose Otoribashi", "clue": "Bleach"},
-    {"word": "Lisa Yadomaru", "clue": "Bleach"},
-    {"word": "Kensei Muguruma", "clue": "Bleach"},
-    {"word": "Tia Halibel", "clue": "Bleach"},
-    {"word": "Gerard Valkyrie", "clue": "Bleach"},
-    {"word": "Pernida Parnkgjas", "clue": "Bleach"},
-    {"word": "Askin Nakk Le Vaar", "clue": "Bleach"},
-    {"word": "Bambietta Basterbine", "clue": "Bleach"},
-    {"word": "Jugram Haschwalth", "clue": "Bleach"},
-    {"word": "Yhwach", "clue": "Bleach"},
-    {"word": "Ryuken Ishida", "clue": "Bleach"},
-    {"word": "Isshin Kurosaki", "clue": "Bleach"},
-    {"word": "Ginjo Kugo", "clue": "Bleach"},
-    "Naruto Characters": [
+    {"word": "Akainu (Sakazuki)", "clue": "One Piece"},
+    {"word": "Kuzan (Aokiji)", "clue": "One Piece"},
+    {"word": "Kizaru (Borsalino)", "clue": "One Piece"},
+    {"word": "Dracule Mihawk", "clue": "One Piece"},
+    {"word": "Boa Hancock", "clue": "One Piece"},
+    {"word": "Buggy", "clue": "One Piece"},
+    {"word": "Smoker", "clue": "One Piece"},
+    {"word": "Tashigi", "clue": "One Piece"},
+    {"word": "Crocodile", "clue": "One Piece"},
+    {"word": "Doflamingo (Donquixote Doflamingo)", "clue": "One Piece"},
+    {"word": "Bartolomeo", "clue": "One Piece"},
+    {"word": "Cavendish", "clue": "One Piece"},
+    {"word": "Vinsmoke Reiju", "clue": "One Piece"},
+    {"word": "Perona", "clue": "One Piece"},
+    {"word": "Gecko Moria", "clue": "One Piece"},
+    {"word": "Kuma (Bartholomew Kuma)", "clue": "One Piece"},
+    {"word": "Sengoku", "clue": "One Piece"},
+    {"word": "Coby", "clue": "One Piece"},
+    {"word": "Roronoa Zoro", "clue": "One Piece"},
+    {"word": "Vinsmoke Sanji", "clue": "One Piece"},
+    {"word": "Nico Robin", "clue": "One Piece"},
+    {"word": "Franky", "clue": "One Piece"},
+    {"word": "Brook", "clue": "One Piece"},
+    {"word": "Jinbe", "clue": "One Piece"},
+    {"word": "Yamato", "clue": "One Piece"},
+    {"word": "Uta", "clue": "One Piece"},
+    {"word": "Vegapunk", "clue": "One Piece"},
+    {"word": "Bonney (Jewelry Bonney)", "clue": "One Piece"},
     {"word": "Naruto Uzumaki", "clue": "Naruto"},
     {"word": "Sasuke Uchiha", "clue": "Naruto"},
     {"word": "Sakura Haruno", "clue": "Naruto"},
@@ -151,7 +100,7 @@ const wordCategories = {
     {"word": "Konohamaru Sarutobi", "clue": "Naruto"},
     {"word": "Iruka Umino", "clue": "Naruto"},
     {"word": "Gamabunta", "clue": "Naruto"},
-     {"word": "Eren Yeager", "clue": "Attack on Titan"},
+    {"word": "Eren Yeager", "clue": "Attack on Titan"},
     {"word": "Mikasa Ackerman", "clue": "Attack on Titan"},
     {"word": "Armin Arlert", "clue": "Attack on Titan"},
     {"word": "Levi Ackerman", "clue": "Attack on Titan"},
@@ -201,7 +150,7 @@ const wordCategories = {
     {"word": "Mina Carolina", "clue": "Attack on Titan"},
     {"word": "Daz", "clue": "Attack on Titan"},
     {"word": "Samuel Linke-Jackson", "clue": "Attack on Titan"},
-      {"word": "Yuji Itadori", "clue": "Jujutsu Kaisen"},
+    {"word": "Yuji Itadori", "clue": "Jujutsu Kaisen"},
     {"word": "Megumi Fushiguro", "clue": "Jujutsu Kaisen"},
     {"word": "Nobara Kugisaki", "clue": "Jujutsu Kaisen"},
     {"word": "Satoru Gojo", "clue": "Jujutsu Kaisen"},
@@ -250,62 +199,9 @@ const wordCategories = {
     {"word": "Geto's Curse Spirit (Unnamed)", "clue": "Jujutsu Kaisen"},
     {"word": "Riko Amanai", "clue": "Jujutsu Kaisen"},
     {"word": "Misato Kuroi", "clue": "Jujutsu Kaisen"},
-    {"word": "Ogami", "clue": "Jujutsu Kaisen"},
-]
+    {"word": "Ogami", "clue": "Jujutsu Kaisen"}
   ],
- "Popular Cartoon Characters": [
-    {"word": "Bugs Bunny", "clue": "Looney Tunes"},
-    {"word": "Tom Cat", "clue": "Tom and Jerry"},
-    {"word": "Jerry Mouse", "clue": "Tom and Jerry"},
-    {"word": "Mickey Mouse", "clue": "Disney"},
-    {"word": "Donald Duck", "clue": "Disney"},
-    {"word": "Scooby-Doo", "clue": "Scooby-Doo, Where Are You!"},
-    {"word": "Fred Flintstone", "clue": "The Flintstones"},
-    {"word": "Homer Simpson", "clue": "The Simpsons"},
-    {"word": "SpongeBob SquarePants", "clue": "SpongeBob SquarePants"},
-    {"word": "Daffy Duck", "clue": "Looney Tunes"},
-    {"word": "Popeye", "clue": "Popeye the Sailor"},
-    {"word": "Woody Woodpecker", "clue": "Woody Woodpecker"},
-    {"word": "Pikachu", "clue": "Pokémon"},
-    {"word": "Goku", "clue": "Dragon Ball Z"},
-    {"word": "Bart Simpson", "clue": "The Simpsons"},
-    {"word": "Dora the Explorer", "clue": "Dora the Explorer"},
-    {"word": "Elmer Fudd", "clue": "Looney Tunes"},
-    {"word": "Yogi Bear", "clue": "The Huckleberry Hound Show"},
-    {"word": "Goofy", "clue": "Disney"},
-    {"word": "Pluto", "clue": "Disney"},
-    {"word": "Wile E. Coyote", "clue": "Looney Tunes"},
-    {"word": "Road Runner", "clue": "Looney Tunes"},
-    {"word": "Charlie Brown", "clue": "Peanuts"},
-    {"word": "Snoopy", "clue": "Peanuts"},
-    {"word": "Felix the Cat", "clue": "Felix the Cat"},
-    {"word": "Betty Boop", "clue": "Betty Boop cartoons"},
-    {"word": "Minnie Mouse", "clue": "Disney"},
-    {"word": "Daisy Duck", "clue": "Disney"},
-    {"word": "Pink Panther", "clue": "The Pink Panther Show"},
-    {"word": "Johnny Bravo", "clue": "Johnny Bravo"},
-    {"word": "Dexter", "clue": "Dexter's Laboratory"},
-    {"word": "Blossom", "clue": "The Powerpuff Girls"},
-    {"word": "Bubbles", "clue": "The Powerpuff Girls"},
-    {"word": "Buttercup", "clue": "The Powerpuff Girls"},
-    {"word": "Courage", "clue": "Courage the Cowardly Dog"},
-    {"word": "Finn the Human", "clue": "Adventure Time"},
-    {"word": "Jake the Dog", "clue": "Adventure Time"},
-    {"word": "Mordecai", "clue": "Regular Show"},
-    {"word": "Rigby", "clue": "Regular Show"},
-    {"word": "Aang", "clue": "Avatar: The Last Airbender"},
-    {"word": "Zuko", "clue": "Avatar: The Last Airbender"},
-    {"word": "Bender Bending Rodriguez", "clue": "Futurama"},
-    {"word": "Philip J. Fry", "clue": "Futurama"},
-    {"word": "Rick Sanchez", "clue": "Rick and Morty"},
-    {"word": "Morty Smith", "clue": "Rick and Morty"},
-    {"word": "Grizz", "clue": "We Bare Bears"},
-    {"word": "Panda", "clue": "We Bare Bears"},
-    {"word": "Ice Bear", "clue": "We Bare Bears"},
-    {"word": "Steven Universe", "clue": "Steven Universe"},
-    {"word": "Gumball Watterson", "clue": "The Amazing World of Gumball"}
-],
-    "Malayalam Movies": [
+  "Malayalam Movies": [
     {"word": "Manjummel Boys", "clue": "Soubin Shahir"},
     {"word": "2018", "clue": "Tovino Thomas"},
     {"word": "The Goat Life (Aadujeevitham)", "clue": "Prithviraj Sukumaran"},
@@ -414,59 +310,9 @@ const wordCategories = {
     {"word": "Guruvayoor Ambalanadayil", "clue": "Basil Joseph"},
     {"word": "Turbo", "clue": "Mammootty"},
     {"word": "L2: Empuraan", "clue": "Mohanlal"},
-    {"word": "Marco", "clue": "unni mukundan"},
-     {"word": "Drishyam", "clue": "Mohanlal"},
-        {"word": "Kumbalangi Nights", "clue": "Fahadh Faasil"},
-        {"word": "Premam", "clue": "Nivin Pauly"},
-        {"word": "Bangalore Days", "clue": "Dulquer Salmaan"},
-        {"word": "Maheshinte Prathikaaram", "clue": "Fahadh Faasil"},
-        {"word": "Charlie", "clue": "Dulquer Salmaan"},
-        {"word": "Ayyappanum Koshiyum", "clue": "Prithviraj Sukumaran"},
-        {"word": "Minnal Murali", "clue": "Tovino Thomas"},
-        {"word": "Manichitrathazhu", "clue": "Mohanlal"},
-        {"word": "Ramji Rao Speaking", "clue": "Saikumar"},
-        {"word": "Oru Vadakkan Veeragatha", "clue": "Mammootty"},
-        {"word": "Devasuram", "clue": "Mohanlal"},
-        {"word": "Kireedam", "clue": "Mohanlal"},
-        {"word": "Vadakkan Pattukal (Film)", "clue": "Jayaram"}, // Or Mammootty if referring to "Oru Vadakkan Veeragatha" as the common name.
-        {"word": "C.I.D. Moosa", "clue": "Dileep"},
-        {"word": "Meenaviyil", "clue": "Kunchacko Boban"},
-        {"word": "Amen", "clue": "Fahadh Faasil"},
-        {"word": "Thondimuthalum Driksakshiyum", "clue": "Fahadh Faasil"},
-        {"word": "Sudani from Nigeria", "clue": "Soubin Shahir"},
-        {"word": "Jallikattu", "clue": "Antony Varghese"},
-        {"word": "Android Kunjappan Ver 5.25", "clue": "Soubin Shahir"},
-        {"word": "Kappela", "clue": "Anna Ben"}, // Though the lead is usually debated, she's a prominent face.
-        {"word": "Home", "clue": "Indrans"},
-        {"word": "Jana Gana Mana", "clue": "Prithviraj Sukumaran"},
-        {"word": "Nanpakal Nerathu Mayakkam", "clue": "Mammootty"},
-        {"word": "Romancham", "clue": "Soubin Shahir"},
-        {"word": "2018", "clue": "Tovino Thomas"},
-        {"word": "Kaakha Kaakha", "clue": "Suriya"}, // Tamil film, but very popular in Kerala, adjust if strictly Malayalam.
-        {"word": "Neru", "clue": "Mohanlal"},
-        {"word": "Kadavan", "clue": "Basil Joseph"},
-        {"word": "Mukundan Unni Associates", "clue": "Vineeth Sreenivasan"},
-        {"word": "Bheeshma Parvam", "clue": "Mammootty"},
-        {"word": "Malik", "clue": "Fahadh Faasil"},
-        {"word": "The Great Indian Kitchen", "clue": "Nimisha Sajayan"}, // Again, female lead, but a key face.
-        {"word": "Kanakam Kamini Kalaham", "clue": "Nivin Pauly"},
-        {"word": "Pushpa: The Rise", "clue": "Allu Arjun"}, // Telugu, but hugely popular. Strict Malayalam only? Then remove.
-        {"word": "Lucifer", "clue": "Mohanlal"},
-        {"word": "Karnan", "clue": "Dhanush"}, // Tamil, popular.
-        {"word": "Hridayam", "clue": "Pranav Mohanlal"},
-        {"word": "Helen", "clue": "Anna Ben"},
-        {"word": "Vellimoonga", "clue": "Biju Menon"},
-        {"word": "Traffic", "clue": "Sreenivasan"}, // Ensemble cast, picking one prominent.
-        {"word": "Ozhimuri", "clue": "Lal"},
-        {"word": "Iyobinte Pusthakam", "clue": "Fahadh Faasil"},
-        {"word": "Parava", "clue": "Dulquer Salmaan"}, // Cameo, but important. Basil Joseph is lead.
-        {"word": "Joseph", "clue": "Joju George"},
-        {"word": "Thaneer Mathan Dinangal", "clue": "Mathew Thomas"},
-        {"word": "Kunjiramayanam", "clue": "Vineeth Sreenivasan"},
-        {"word": "Godha", "clue": "Tovino Thomas"},
-        {"word": "Mayanadi", "clue": "Tovino Thomas"}
-],
-    "Superhero Characters": [
+    {"word": "Marco", "clue": "Dhyan Sreenivasan"}
+  ],
+  "Superhero Characters": [
     {"word": "Iron Man", "clue": "Marvel"},
     {"word": "Captain America", "clue": "Marvel"},
     {"word": "Thor", "clue": "Marvel"},
@@ -518,7 +364,6 @@ const wordCategories = {
     {"word": "Invisible Woman", "clue": "Marvel"},
     {"word": "Human Torch", "clue": "Marvel"},
     {"word": "The Thing", "clue": "Marvel"},
-
     {"word": "Batman", "clue": "DC"},
     {"word": "Superman", "clue": "DC"},
     {"word": "Wonder Woman", "clue": "DC"},
@@ -569,7 +414,6 @@ const wordCategories = {
     {"word": "Stephanie Brown (Spoiler)", "clue": "DC"},
     {"word": "Doctor Light", "clue": "DC"},
     {"word": "Metamorpho", "clue": "DC"},
-
     {"word": "Omni-Man", "clue": "Invincible"},
     {"word": "Invincible (Mark Grayson)", "clue": "Invincible"},
     {"word": "Atom Eve", "clue": "Invincible"},
@@ -597,63 +441,91 @@ const wordCategories = {
     {"word": "Neptune", "clue": "The Boys"},
     {"word": "Spawm", "clue": "Spawn"},
     {"word": "Hellboy", "clue": "Hellboy"},
-    {"word": "The Mask", "clue": "The Mask"}
-    ];
-    "Animals": [
-        {"word": "Elephant", "clue": "Possesses a trunk for grasping."},
-        {"word": "Giraffe", "clue": "Has an exceptionally long neck."},
-        {"word": "Kangaroo", "clue": "Carries its young in a pouch."},
-        {"word": "Penguin", "clue": "Flightless bird adapted for swimming."},
-        {"word": "Bat", "clue": "The only mammal capable of true flight."},
-        {"word": "Octopus", "clue": "Has eight arms and changes color."},
-        {"word": "Chameleon", "clue": "Changes skin color for camouflage."},
-        {"word": "Sloth", "clue": "Moves very slowly through trees."},
-        {"word": "Platypus", "clue": "Mammal that lays eggs."},
-        {"word": "Peacock", "clue": "Male displays elaborate tail feathers."},
-        {"word": "Koala", "clue": "Lives on a diet of eucalyptus leaves."},
-        {"word": "Pangolin", "clue": "Covered in protective keratin scales."},
-        {"word": "Narwhal", "clue": "Possesses a long, protruding tusk."},
-        {"word": "Armadillo", "clue": "Has a flexible, bony shell."},
-        {"word": "Axolotl", "clue": "Retains larval features throughout life."},
-        {"word": "Wombat", "clue": "Marsupial with backward-facing pouch."},
-        {"word": "Lemur", "clue": "Primate endemic to Madagascar."},
-        {"word": "Fennec Fox", "clue": "Known for its unusually large ears."},
-        {"word": "Blobfish", "clue": "Gelatinous body adapted for deep sea pressure."},
-        {"word": "Aye-Aye", "clue": "Uses a long, thin middle finger to tap for grubs."},
-        {"word": "Star-nosed Mole", "clue": "Has 22 fleshy tentacles on its snout."},
-        {"word": "Kakapo", "clue": "Largest and only flightless parrot."},
-        {"word": "Hagfish", "clue": "Produces copious amounts of slime as defense."},
-        {"word": "Tarsier", "clue": "Possesses disproportionately large eyes."},
-        {"word": "Manatee", "clue": "Large, slow-moving aquatic herbivore."},
-        {"word": "Komodo Dragon", "clue": "Largest living lizard species."},
-        {"word": "Quokka", "clue": "Known for its seemingly smiling face."},
-        {"word": "Goblin Shark", "clue": "Has a long, flattened snout and protrusible jaws."},
-        {"word": "Alpaca", "clue": "Prized for its soft, luxurious fiber."},
-        {"word": "Camel", "clue": "Stores fat in its humps for energy and water."},
-        {"word": "Hedgehog", "clue": "Covered in sharp, spiny quills."},
-        {"word": "Anteater", "clue": "Has a long, sticky tongue for catching insects."},
-        {"word": "Walrus", "clue": "Distinguished by prominent tusks."},
-        {"word": "Sea Otter", "clue": "Uses tools, like rocks, to crack open shellfish."},
-        {"word": "Potoo Bird", "clue": "Master of camouflage, resembling a tree stump."},
-        {"word": "Tapir", "clue": "Features a short, prehensile snout."},
-        {"word": "Grizzly Bear", "clue": "Known for a distinctive shoulder hump."},
-        {"word": "Orangutan", "clue": "Great ape with long, reddish-brown hair."},
-        {"word": "Bison", "clue": "Large bovine with a shaggy coat and shoulder hump."},
-        {"word": "Warthog", "clue": "African wild pig with facial warts and tusks."},
-        {"word": "Hippopotamus", "clue": "Spends most of its time in water."},
-        {"word": "Porcupine", "clue": "Rodent with a coat of sharp quills."},
-        {"word": "Rhinoceros", "clue": "Recognizable by its distinctive horn/horns."},
-        {"word": "Polar Bear", "clue": "Large white bear adapted for Arctic life."},
-        {"word": "Cheetah", "clue": "Known as the fastest land animal."},
-        {"word": "Pufferfish", "clue": "Inflates its body when threatened."},
-        {"word": "Cuttlefish", "clue": "Possesses W-shaped pupils and remarkable camouflage."},
-        {"word": "Tardigrade", "clue": "Microscopic invertebrate known for extreme resilience."},
-        {"word": "Okapi", "clue": "Zebra-like stripes on hindquarters, related to giraffe."},
-        {"word": "Dumbo Octopus", "clue": "Fins resemble elephant ears, lives in deep sea."}
-        // Add more animals here, ensuring the clue is a non-identifying feature.
-    ],
-
-      "Popular Indian Dishes": [
+    {"word": "The Mask", "clue": "The Mask"},
+    {"word": "Genos", "clue": "One-Punch Man"},
+    {"word": "Saitama", "clue": "One-Punch Man"},
+    {"word": "Fubuki", "clue": "One-Punch Man"},
+    {"word": "Silver Fang (Bang)", "clue": "One-Punch Man"},
+    {"word": "Tatsumaki (Terrible Tornado)", "clue": "One-Punch Man"},
+    {"word": "All Might", "clue": "My Hero Academia"},
+    {"word": "Izuku Midoriya (Deku)", "clue": "My Hero Academia"},
+    {"word": "Katsuki Bakugo", "clue": "My Hero Academia"},
+    {"word": "Shoto Todoroki", "clue": "My Hero Academia"},
+    {"word": "Ochaco Uraraka", "clue": "My Hero Academia"},
+    {"word": "Tenya Iida", "clue": "My Hero Academia"},
+    {"word": "Eraser Head (Shota Aizawa)", "clue": "My Hero Academia"},
+    {"word": "Endeavor", "clue": "My Hero Academia"},
+    {"word": "Hawks", "clue": "My Hero Academia"},
+    {"word": "Mirko", "clue": "My Hero Academia"},
+    {"word": "Nighteye", "clue": "My Hero Academia"},
+    {"word": "Superman (All-Star Superman)", "clue": "All-Star Superman"},
+    {"word": "Spider-Gwen", "clue": "Spider-Man: Into the Spider-Verse"},
+    {"word": "Miles Morales", "clue": "Spider-Man: Into the Spider-Verse"},
+    {"word": "Spider-Man Noir", "clue": "Spider-Man: Into the Spider-Verse"},
+    {"word": "Spider-Ham", "clue": "Spider-Man: Into the Spider-Verse"},
+    {"word": "Peni Parker", "clue": "Spider-Man: Into the Spider-Verse"},
+    {"word": "Big Hero 6 (Baymax)", "clue": "Big Hero 6"},
+    {"word": "Hiro Hamada", "clue": "Big Hero 6"},
+    {"word": "Captain Underpants", "clue": "Captain Underpants"},
+    {"word": "Mr. Incredible", "clue": "The Incredibles"},
+    {"word": "Elastigirl", "clue": "The Incredibles"},
+    {"word": "Dash Parr", "clue": "The Incredibles"},
+    {"word": "Violet Parr", "clue": "The Incredibles"},
+    {"word": "Frozone", "clue": "The Incredibles"}
+  ],
+  "Superhero Movies": [
+    {"word": "Iron Man", "clue": "War Machine"},
+    {"word": "Iron Man 2", "clue": "Black Widow"},
+    {"word": "Thor", "clue": "Lady Sif"},
+    {"word": "Captain America: The First Avenger", "clue": "Bucky Barnes (Winter Soldier)"},
+    {"word": "The Avengers", "clue": "Hawkeye"},
+    {"word": "Captain America: The Winter Soldier", "clue": "Falcon"},
+    {"word": "Guardians of the Galaxy", "clue": "Gamora"},
+    {"word": "Avengers: Age of Ultron", "clue": "Scarlet Witch"},
+    {"word": "Ant-Man", "clue": "Wasp"},
+    {"word": "Captain America: Civil War", "clue": "Spider-Man"},
+    {"word": "Doctor Strange", "clue": "Wong"},
+    {"word": "Guardians of the Galaxy Vol. 2", "clue": "Mantis"},
+    {"word": "Spider-Man: Homecoming", "clue": "Iron Man"},
+    {"word": "Thor: Ragnarok", "clue": "Valkyrie"},
+    {"word": "Black Panther", "clue": "Okoye"},
+    {"word": "Avengers: Infinity War", "clue": "Nebula"},
+    {"word": "Ant-Man and the Wasp", "clue": "Ghost (Ava Starr)"},
+    {"word": "Captain Marvel", "clue": "Photon (Monica Rambeau)"},
+    {"word": "Avengers: Endgame", "clue": "Rescue (Pepper Potts)"},
+    {"word": "Spider-Man: Far From Home", "clue": "Nick Fury (as a heroic figure)"},
+    {"word": "Black Widow", "clue": "Yelena Belova"},
+    {"word": "Shang-Chi and the Legend of the Ten Rings", "clue": "Katy Chen (supporting, but develops heroic traits)"},
+    {"word": "Eternals", "clue": "Thena"},
+    {"word": "Spider-Man: No Way Home", "clue": "Doctor Strange"},
+    {"word": "Doctor Strange in the Multiverse of Madness", "clue": "America Chavez"},
+    {"word": "Thor: Love and Thunder", "clue": "Korg"},
+    {"word": "Black Panther: Wakanda Forever", "clue": "Shuri"},
+    {"word": "Ant-Man and the Wasp: Quantumania", "clue": "Cassie Lang (Stature)"},
+    {"word": "Guardians of the Galaxy Vol. 3", "clue": "Adam Warlock"},
+    {"word": "The Marvels", "clue": "Ms. Marvel"},
+    {"word": "Man of Steel", "clue": "Lois Lane (as a brave ally)"},
+    {"word": "Batman v Superman: Dawn of Justice", "clue": "Wonder Woman"},
+    {"word": "Suicide Squad (2016)", "clue": "Katana"},
+    {"word": "Wonder Woman", "clue": "Steve Trevor (Heroic ally)"},
+    {"word": "Justice League", "clue": "Aquaman"},
+    {"word": "Aquaman", "clue": "Mera"},
+    {"word": "Shazam!", "clue": "Mary Bromfield (Mary Marvel)"},
+    {"word": "Birds of Prey", "clue": "Huntress"},
+    {"word": "Wonder Woman 1984", "clue": "Cheetah (as a corrupted hero, initially)"},
+    {"word": "Zack Snyder's Justice League", "clue": "Cyborg"},
+    {"word": "The Suicide Squad (2021)", "clue": "Bloodsport"},
+    {"word": "Black Adam", "clue": "Doctor Fate"},
+    {"word": "Shazam! Fury of the Gods", "clue": "Freddy Freeman (Captain Marvel Jr.)"},
+    {"word": "The Flash", "clue": "Supergirl"},
+    {"word": "Blue Beetle", "clue": "Jaime Reyes's Sister (as a supportive sidekick)"},
+    {"word": "Logan", "clue": "Laura Kinney (X-23)"},
+    {"word": "Deadpool", "clue": "Negasonic Teenage Warhead"},
+    {"word": "Deadpool 2", "clue": "Domino"},
+    {"word": "X-Men: First Class", "clue": "Mystique (as a hero initially)"},
+    {"word": "X-Men: Days of Future Past", "clue": "Quicksilver"}
+  ],
+  "Popular Indian Dishes": [
     {"word": "Butter Chicken", "clue": "North India"},
     {"word": "Naan", "clue": "North India"},
     {"word": "Biryani (Hyderabadi style)", "clue": "South India"},
@@ -704,8 +576,8 @@ const wordCategories = {
     {"word": "Kadai Paneer", "clue": "North India"},
     {"word": "Bharwa Bhindi", "clue": "North India"},
     {"word": "Litti Chokha", "clue": "North India"}
-],
-    "Brands and Logos": [
+  ],
+  "Brands and Logos": [
     {"word": "Nike", "clue": "Sportswear"},
     {"word": "Adidas", "clue": "Sportswear"},
     {"word": "Apple", "clue": "Technology"},
@@ -806,9 +678,8 @@ const wordCategories = {
     {"word": "Siemens", "clue": "Engineering"},
     {"word": "Bosch", "clue": "Engineering & Electronics"},
     {"word": "GE (General Electric)", "clue": "Industrial Conglomerate"}
-],
-
-"Academic Subjects": [
+  ],
+  "Academic Subjects": [
     {"word": "Mathematics", "clue": "Study of Quantity, Structure, Space, and Change"},
     {"word": "Physics", "clue": "Study of Matter and Energy"},
     {"word": "Chemistry", "clue": "Study of Matter and its Properties"},
@@ -859,9 +730,8 @@ const wordCategories = {
     {"word": "Semiotics", "clue": "Study of Signs and Symbols"},
     {"word": "Cartography", "clue": "Art and Science of Mapmaking"},
     {"word": "Demography", "clue": "Study of Human Populations"}
-],
-
-    "Famous Fictional Locations": [
+  ],
+  "Famous Fictional Locations": [
     {"word": "Hogwarts", "clue": "Harry Potter"},
     {"word": "Middle-earth", "clue": "The Lord of the Rings"},
     {"word": "Gotham City", "clue": "DC Comics"},
@@ -966,264 +836,157 @@ const wordCategories = {
     {"word": "Central City", "clue": "DC Comics"},
     {"word": "Star City", "clue": "DC Comics"},
     {"word": "Themyscira (Wonder Woman)", "clue": "Wonder Woman"}
-],
-
-      "Superhero Movies": [
-    {"word": "Iron Man", "clue": "War Machine"},
-    {"word": "Iron Man 2", "clue": "Black Widow"},
-    {"word": "Thor", "clue": "Lady Sif"},
-    {"word": "Captain America: The First Avenger", "clue": "Bucky Barnes (Winter Soldier)"},
-    {"word": "The Avengers", "clue": "Hawkeye"},
-    {"word": "Captain America: The Winter Soldier", "clue": "Falcon"},
-    {"word": "Guardians of the Galaxy", "clue": "Gamora"},
-    {"word": "Avengers: Age of Ultron", "clue": "Scarlet Witch"},
-    {"word": "Ant-Man", "clue": "Wasp"},
-    {"word": "Captain America: Civil War", "clue": "Spider-Man"},
-    {"word": "Doctor Strange", "clue": "Wong"},
-    {"word": "Guardians of the Galaxy Vol. 2", "clue": "Mantis"},
-    {"word": "Spider-Man: Homecoming", "clue": "Iron Man"},
-    {"word": "Thor: Ragnarok", "clue": "Valkyrie"},
-    {"word": "Black Panther", "clue": "Okoye"},
-    {"word": "Avengers: Infinity War", "clue": "Nebula"},
-    {"word": "Ant-Man and the Wasp", "clue": "Ghost (Ava Starr)"},
-    {"word": "Captain Marvel", "clue": "Photon (Monica Rambeau)"},
-    {"word": "Avengers: Endgame", "clue": "Rescue (Pepper Potts)"},
-    {"word": "Spider-Man: Far From Home", "clue": "Nick Fury (as a heroic figure)"},
-    {"word": "Black Widow", "clue": "Yelena Belova"},
-    {"word": "Shang-Chi and the Legend of the Ten Rings", "clue": "Katy Chen (supporting, but develops heroic traits)"},
-    {"word": "Eternals", "clue": "Thena"},
-    {"word": "Spider-Man: No Way Home", "clue": "Doctor Strange"},
-    {"word": "Doctor Strange in the Multiverse of Madness", "clue": "America Chavez"},
-    {"word": "Thor: Love and Thunder", "clue": "Korg"},
-    {"word": "Black Panther: Wakanda Forever", "clue": "Shuri"},
-    {"word": "Ant-Man and the Wasp: Quantumania", "clue": "Cassie Lang (Stature)"},
-    {"word": "Guardians of the Galaxy Vol. 3", "clue": "Adam Warlock"},
-    {"word": "The Marvels", "clue": "Ms. Marvel"},
-
-    {"word": "Man of Steel", "clue": "Lois Lane (as a brave ally)"},
-    {"word": "Batman v Superman: Dawn of Justice", "clue": "Wonder Woman"},
-    {"word": "Suicide Squad (2016)", "clue": "Katana"},
-    {"word": "Wonder Woman", "clue": "Steve Trevor (Heroic ally)"},
-    {"word": "Justice League", "clue": "Aquaman"},
-    {"word": "Aquaman", "clue": "Mera"},
-    {"word": "Shazam!", "clue": "Mary Bromfield (Mary Marvel)"},
-    {"word": "Birds of Prey", "clue": "Huntress"},
-    {"word": "Wonder Woman 1984", "clue": "Cheetah (as a corrupted hero, initially)"},
-    {"word": "Zack Snyder's Justice League", "clue": "Cyborg"},
-    {"word": "The Suicide Squad (2021)", "clue": "Bloodsport"},
-    {"word": "Black Adam", "clue": "Doctor Fate"},
-    {"word": "Shazam! Fury of the Gods", "clue": "Freddy Freeman (Captain Marvel Jr.)"},
-    {"word": "The Flash", "clue": "Supergirl"},
-    {"word": "Blue Beetle", "clue": "Jaime Reyes's Sister (as a supportive sidekick)"},
-    {"word": "Logan", "clue": "Laura Kinney (X-23)"},
-    {"word": "Deadpool", "clue": "Negasonic Teenage Warhead"},
-    {"word": "Deadpool 2", "clue": "Domino"},
-    {"word": "X-Men: First Class", "clue": "Mystique (as a hero initially)"},
-    {"word": "X-Men: Days of Future Past", "clue": "Quicksilver"}
-],
-    "Popular Games": [
-        {"word": "Fortnite", "clue": "Battle Royale"},
-        {"word": "Minecraft", "clue": "Sandbox / Survival"},
-        {"word": "Grand Theft Auto V", "clue": "Action-Adventure"},
-        {"word": "Call of Duty", "clue": "First-Person Shooter"},
-        {"word": "FIFA", "clue": "Sports Simulation"},
-        {"word": "The Legend of Zelda: Breath of the Wild", "clue": "Action-Adventure / Open World"},
-        {"word": "Among Us", "clue": "Social Deduction"},
-        {"word": "Super Mario Bros.", "clue": "Platformer"},
-        {"word": "Tetris", "clue": "Puzzle"},
-        {"word": "League of Legends", "clue": "MOBA (Multiplayer Online Battle Arena)"},
-        {"word": "Overwatch", "clue": "Hero Shooter"},
-        {"word": "Valorant", "clue": "Tactical Shooter"},
-        {"word": "Roblox", "clue": "User-Generated Content Platform"},
-        {"word": "Pokémon Go", "clue": "Augmented Reality / Location-Based"},
-        {"word": "The Sims 4", "clue": "Life Simulation"},
-        {"word": "Assassin's Creed Valhalla", "clue": "Action RPG / Open World"},
-        {"word": "Red Dead Redemption 2", "clue": "Action-Adventure / Western"},
-        {"word": "Cyberpunk 2077", "clue": "Action RPG"},
-        {"word": "God of War Ragnarök", "clue": "Action-Adventure"},
-        {"word": "Elden Ring", "clue": "Action RPG / Open World"},
-        {"word": "Apex Legends", "clue": "Battle Royale / Hero Shooter"},
-        {"word": "Genshin Impact", "clue": "Action RPG / Gacha"},
-        {"word": "Counter-Strike 2", "clue": "Tactical First-Person Shooter"},
-        {"word": "Rocket League", "clue": "Vehicular Soccer"},
-        {"word": "Fall Guys", "clue": "Battle Royale / Party Game"},
-        {"word": "Animal Crossing: New Horizons", "clue": "Life Simulation / Social Simulation"},
-        {"word": "Stardew Valley", "clue": "Farm Simulation / RPG"},
-        {"word": "Hades", "clue": "Roguelike Action RPG"},
-        {"word": "Persona 5 Royal", "clue": "JRPG / Social Simulation"},
-        {"word": "Control", "clue": "Action-Adventure / Third-Person Shooter"},
-        {"word": "Doom Eternal", "clue": "First-Person Shooter"},
-        {"word": "Resident Evil Village", "clue": "Survival Horror"},
-        {"word": "It Takes Two", "clue": "Co-op Adventure"},
-        {"word": "Celeste", "clue": "Precision Platformer"},
-        {"word": "Disco Elysium", "clue": "Role-Playing Game"},
-        {"word": "Hollow Knight", "clue": "Metroidvania"},
-        {"word": "Portal 2", "clue": "Puzzle-Platformer"},
-        {"word": "Overcooked 2", "clue": "Co-op Cooking"},
-        {"word": "Factorio", "clue": "Factory Simulation / Strategy"},
-        {"word": "Terraria", "clue": "Sandbox / Action-Adventure"},
-        {"word": "No Man's Sky", "clue": "Space Exploration / Survival"},
-        {"word": "Forza Horizon 5", "clue": "Open World Racing"},
-        {"word": "NBA 2K", "clue": "Basketball Simulation"},
-        {"word": "Madden NFL", "clue": "American Football Simulation"},
-        {"word": "Mortal Kombat 1", "clue": "Fighting Game"},
-        {"word": "Street Fighter 6", "clue": "Fighting Game"},
-        {"word": "Clash of Clans", "clue": "Strategy / Base Building (Mobile)"},
-        {"word": "Candy Crush Saga", "clue": "Match-3 Puzzle (Mobile)"},
-        {"word": "Pokémon Scarlet and Violet", "clue": "Open World RPG"},
-        {"word": "Diablo IV", "clue": "Action RPG"}
-        // Add more Popular Games here, with their game type/genre as the clue.
-    ]
- 
+  ]
 };
 
-// Game state variables
 let players = [];
-let currentIndex = 0;
 let spyIndex = -1;
+let chosenCategory = "";
 let chosenWordObject = null;
+let currentPlayerIndex = 0;
 let votes = {};
-let currentCategory = "";
 
-// Get DOM elements for easier access (Good practice to get them once)
-const setupDiv = document.getElementById("setup");
-const roleRevealDiv = document.getElementById("roleReveal");
-const votingDiv = document.getElementById("voting");
-const resultDiv = document.getElementById("result");
-
-const playerLabel = document.getElementById("playerLabel");
-const roleText = document.getElementById("roleText");
-const roleActionButton = document.getElementById("roleActionButton"); // This needs an ID in HTML!
+const setupSection = document.getElementById("setup");
+const roleRevealSection = document.getElementById("roleReveal");
+const votingSection = document.getElementById("voting");
+const resultSection = document.getElementById("result");
 const numPlayersInput = document.getElementById("numPlayers");
 const categorySelect = document.getElementById("categorySelect");
+const playerLabel = document.getElementById("playerLabel");
+const roleImage = document.getElementById("roleImage");
+const imageContainer = document.getElementById("imageContainer");
+const roleText = document.getElementById("roleText");
+const roleActionButton = document.getElementById("roleActionButton");
+const voteButtonsContainer = document.getElementById("voteButtons");
+
+// Populate category dropdown
+for (const category in wordCategories) {
+    const option = document.createElement("option");
+    option.value = category;
+    option.innerText = category;
+    categorySelect.appendChild(option);
+}
 
 /**
- * Initializes the game when the window loads.
- * Populates the category select dropdown.
- */
-window.onload = () => {
-    // Assuming wordCategories is defined globally or imported elsewhere.
-    // Make sure your wordCategories object is included in your script.js or linked before this script.
-    for (const cat in wordCategories) {
-        const option = document.createElement("option");
-        option.value = cat;
-        option.textContent = cat;
-        categorySelect.appendChild(option);
-    }
-};
-
-/**
- * Starts the game.
- * Validates player count, assigns roles (Civilian/Spy), and prepares for the first player's role reveal.
+ * Starts the game by initializing players, choosing spy, word, and category.
  */
 function startGame() {
-    const num = parseInt(numPlayersInput.value);
+    const numPlayers = parseInt(numPlayersInput.value);
+    chosenCategory = categorySelect.value;
 
-    if (isNaN(num) || num < 3 || num > 6) {
-        alert("Please enter a number of players between 3 and 6.");
+    if (numPlayers < 3 || numPlayers > 6) {
+        alert("Please select between 3 and 6 players.");
         return;
     }
 
-    currentCategory = categorySelect.value;
-    const wordList = wordCategories[currentCategory];
-
-    if (!wordList || wordList.length === 0) {
-        alert("Selected category has no words. Please choose another category.");
+    if (!chosenCategory) {
+        alert("Please select a category.");
         return;
     }
 
-    // Randomly select a word/clue for the round
-    chosenWordObject = wordList[Math.floor(Math.random() * wordList.length)];
-
-    // Initialize players and assign roles
-    players = new Array(num).fill("Civilian");
-    spyIndex = Math.floor(Math.random() * num);
-    players[spyIndex] = "Spy";
-
-    // Reset votes and current player index
-    votes = {};
-    currentIndex = 0; // Start with Player 1
-
-    // Transition UI from setup to role reveal
-    setupDiv.classList.add("hidden");
-    roleRevealDiv.classList.remove("hidden");
-
-    // Prepare the role reveal for the first player
-    playerLabel.innerText = `Player ${currentIndex + 1}`;
-    roleText.innerText = "Tap to reveal your role.";
-    roleText.classList.add("hidden"); // Role text is hidden by default
-    roleActionButton.onclick = revealCurrentPlayerRole; // Set action for first tap
-    roleActionButton.innerText = "Reveal Role";
-}
-
-/**
- * Reveals the current player's role.
- * Changes button text to "Hide & Pass".
- */
-function revealCurrentPlayerRole() {
-    if (players[currentIndex] === "Spy") {
-        roleText.innerText = `You are the SPY. Your clue is: "${chosenWordObject.clue}"`;
-    } else {
-        roleText.innerText = `You are a CIVILIAN. The word is: "${chosenWordObject.word}"`;
+    const words = wordCategories[chosenCategory];
+    if (!words || words.length === 0) {
+        alert("Selected category has no words. Please choose another.");
+        return;
     }
-    roleText.classList.remove("hidden"); // Show the role text
-    // Update button text for the next action: Hide & Pass
-    roleActionButton.innerText = `Hide & Pass to Player ${currentIndex + 2 > players.length ? 'Vote' : currentIndex + 2}`;
-    roleActionButton.onclick = hideAndPassRole; // Set action for the next tap
+
+    chosenWordObject = words[Math.floor(Math.random() * words.length)];
+
+    players = Array.from({ length: numPlayers }, (_, i) => ({ id: i, isSpy: false }));
+    spyIndex = Math.floor(Math.random() * numPlayers);
+    players[spyIndex].isSpy = true;
+
+    setupSection.classList.add("hidden");
+    roleRevealSection.classList.remove("hidden");
+    displayRole();
 }
 
 /**
- * Hides the current player's role and prepares for the next player or transitions to the voting phase.
+ * Displays the role (spy or civilian) and word to the current player.
  */
-function hideAndPassRole() {
-    roleText.classList.add("hidden"); // Hide the role text again
-    currentIndex++; // Move to the next player
+function displayRole() {
+    if (currentPlayerIndex < players.length) {
+        playerLabel.innerText = `Player ${currentPlayerIndex + 1}`;
+        imageContainer.classList.add("hidden"); // Hide image by default
 
-    if (currentIndex < players.length) {
-        // Still players to reveal roles
-        playerLabel.innerText = `Player ${currentIndex + 1}`;
-        roleText.innerText = "Tap to reveal your role."; // Prompt for the next player
-        roleActionButton.innerText = "Reveal Role"; // Reset button text
-        roleActionButton.onclick = revealCurrentPlayerRole; // Reset action for the next player
+        if (players[currentPlayerIndex].isSpy) {
+            roleText.innerText = "You are the SPY!";
+            roleImage.src = ""; // Clear image if spy
+            imageContainer.classList.add("hidden");
+        } else {
+            roleText.innerText = `You are a CIVILIAN. The word is: "${chosenWordObject.word}". The clue is: "${chosenWordObject.clue}"`;
+            roleImage.src = ""; // Clear image if civilian
+            imageContainer.classList.add("hidden");
+        }
+
+        roleActionButton.innerText = "Reveal Role";
+        roleActionButton.onclick = showRoleDetails;
     } else {
-        // All players have viewed their roles, move to voting
-        roleRevealDiv.classList.add("hidden");
-        votingDiv.classList.remove("hidden");
-        renderVotingButtons();
+        startVotingPhase();
     }
 }
 
 /**
- * Renders the voting buttons for each player.
+ * Shows the role details (image and full text) for the current player.
  */
-function renderVotingButtons() {
-    const voteButtonsDiv = document.getElementById("voteButtons");
-    voteButtonsDiv.innerHTML = ""; // Clear previous buttons
+function showRoleDetails() {
+    imageContainer.classList.remove("hidden");
+    roleActionButton.innerText = "Hide Role & Pass";
+    roleActionButton.onclick = hideRoleAndPass;
+}
+
+/**
+ * Hides the role details and prepares for the next player or voting.
+ */
+function hideRoleAndPass() {
+    currentPlayerIndex++;
+    if (currentPlayerIndex < players.length) {
+        displayRole();
+    } else {
+        startVotingPhase();
+    }
+}
+
+/**
+ * Initiates the voting phase, displaying buttons for each player.
+ */
+function startVotingPhase() {
+    roleRevealSection.classList.add("hidden");
+    votingSection.classList.remove("hidden");
+
+    voteButtonsContainer.innerHTML = "";
+    votes = {}; // Reset votes for new round
 
     for (let i = 0; i < players.length; i++) {
-        const btn = document.createElement("button");
-        btn.innerText = `Vote Player ${i + 1}`;
-        btn.onclick = () => castVote(i); // Attach click event
-        voteButtonsDiv.appendChild(btn);
+        const button = document.createElement("button");
+        button.innerText = `Player ${i + 1}`;
+        button.onclick = () => recordVote(i);
+        voteButtonsContainer.appendChild(button);
+        votes[i] = 0; // Initialize vote count for each player
     }
 }
 
 /**
- * Records a vote for a specific player and checks if all votes are in.
+ * Records a vote for a specific player and checks if voting is complete.
  * @param {number} votedPlayerIndex - The index of the player being voted for.
  */
-function castVote(votedPlayerIndex) {
-    votes[votedPlayerIndex] = (votes[votedPlayerIndex] || 0) + 1;
-
-    // A simple voting mechanism where any click increments a vote.
-    // For a strict "each player votes once" pass-and-play style,
-    // you'd need a similar reveal/hide mechanism for voting:
+function recordVote(votedPlayerIndex) {
+    votes[votedPlayerIndex]++;
+    // In a real game, you'd have each player secretly cast a vote,
+    // and then reveal. This simple version just increments a public counter.
+    // You might need a similar reveal/hide mechanism for voting:
     // "Player X, cast your vote" -> Reveal buttons -> "Hide & Pass Vote"
     // For now, it proceeds once total clicks equals player count.
 
     const totalVotesCast = Object.values(votes).reduce((sum, count) => sum + count, 0);
-    if (totalVotesCast === players.length) {
+    // This condition needs to be more robust for a real voting system where each player votes once.
+    // For a simple click-based system where every button click counts as a vote:
+    if (totalVotesCast === players.length) { // Assuming each player will click one button
         checkResult();
+    } else {
+        // You might want to hide voting buttons after one vote per 'turn'
+        // and add a "Next Player" button.
+        // For simplicity, this continues accumulating votes directly.
     }
 }
 
@@ -1235,17 +998,28 @@ function checkResult() {
     let maxVotes = 0;
     let tied = false;
 
-    for (const playerIndex in votes) {
-        if (votes[playerIndex] > maxVotes) {
-            maxVotes = votes[playerIndex];
-            mostVotedPlayerIndex = parseInt(playerIndex);
-            tied = false;
-        } else if (votes[playerIndex] === maxVotes) {
+    // Convert votes object to an array to easily sort or iterate
+    const voteCounts = Object.keys(votes).map(playerIndex => ({
+        playerIndex: parseInt(playerIndex),
+        count: votes[playerIndex]
+    }));
+
+    // Sort in descending order of votes
+    voteCounts.sort((a, b) => b.count - a.count);
+
+    if (voteCounts.length > 0) {
+        maxVotes = voteCounts[0].count;
+        mostVotedPlayerIndex = voteCounts[0].playerIndex;
+
+        // Check for ties among the top vote-getters
+        if (voteCounts.length > 1 && voteCounts[1].count === maxVotes) {
             tied = true;
         }
     }
 
     const resultTextElement = document.getElementById("resultText");
+    votingSection.classList.add("hidden");
+    resultSection.classList.remove("hidden");
 
     if (tied) {
         resultTextElement.innerText = `It's a tie! The real SPY was Player ${spyIndex + 1}. Spy wins! The word was: "${chosenWordObject.word}".`;
@@ -1254,7 +1028,4 @@ function checkResult() {
     } else {
         resultTextElement.innerText = `Wrong guess! The real SPY was Player ${spyIndex + 1}. Spy wins! The word was: "${chosenWordObject.word}".`;
     }
-
-    votingDiv.classList.add("hidden");
-    resultDiv.classList.remove("hidden");
 }
