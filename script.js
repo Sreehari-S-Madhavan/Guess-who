@@ -980,7 +980,7 @@ function recordVote(votedPlayerIndex) {
 
     const totalVotesCast = Object.values(votes).reduce((sum, count) => sum + count, 0);
     // This condition needs to be more robust for a real voting system where each player votes once.
-    // For a simple click-based system where every button click counts as a vote:
+    // For simplicity, this continues accumulating votes directly.
     if (totalVotesCast === players.length) { // Assuming each player will click one button
         checkResult();
     } else {
