@@ -853,179 +853,118 @@ const resultSection = document.getElementById("result");
 const numPlayersInput = document.getElementById("numPlayers");
 const categorySelect = document.getElementById("categorySelect");
 const playerLabel = document.getElementById("playerLabel");
-const roleImage = document.getElementById("roleImage");
-const imageContainer = document.getElementById("imageContainer");
 const roleText = document.getElementById("roleText");
 const roleActionButton = document.getElementById("roleActionButton");
 const voteButtonsContainer = document.getElementById("voteButtons");
 
 // Populate category dropdown
 for (const category in wordCategories) {
-    const option = document.createElement("option");
-    option.value = category;
-    option.innerText = category;
-    categorySelect.appendChild(option);
+  const option = document.createElement("option");
+  option.value = category;
+  option.innerText = category;
+  categorySelect.appendChild(option);
 }
 
-/**
- * Starts the game by initializing players, choosing spy, word, and category.
- */
 function startGame() {
-    const numPlayers = parseInt(numPlayersInput.value);
-    chosenCategory = categorySelect.value;
+  const numPlayers = parseInt(numPlayersInput.value);
+  chosenCategory = categorySelect.value;
 
-    if (numPlayers < 3 || numPlayers > 6) {
-        alert("Please select between 3 and 6 players.");
-        return;
-    }
+  if (numPlayers < 3 || numPlayers > 6) {
+    alert("Please select between 3 and 6 players.");
+    return;
+  }
 
-    if (!chosenCategory) {
-        alert("Please select a category.");
-        return;
-    }
+  if (!chosenCategory) {
+    alert("Please select a category.");
+    return;
+  }
 
-    const words = wordCategories[chosenCategory];
-    if (!words || words.length === 0) {
-        alert("Selected category has no words. Please choose another.");
-        return;
-    }
+  const words = wordCategories[chosenCategory];
+  if (!words || words.length === 0) {
+    alert("Selected category has no words. Please choose another.");
+    return;
+  }
 
-    chosenWordObject = words[Math.floor(Math.random() * words.length)];
+  chosenWordObject = words[Math.floor(Math.random() * words.length)];
 
-    players = Array.from({ length: numPlayers }, (_, i) => ({ id: i, isSpy: false }));
-    spyIndex = Math.floor(Math.random() * numPlayers);
-    players[spyIndex].isSpy = true;
+  players = Array.from({ length: numPlayers }, (_, i) => ({ id: i, isSpy: false }));
+  spyIndex = Math.floor(Math.random() * numPlayers);
+  players[spyIndex].isSpy = true;
 
-    setupSection.classList.add("hidden");
-    roleRevealSection.classList.remove("hidden");
-    displayRole();
+  setupSection.classList.add("hidden");
+  roleRevealSection.classList.remove("hidden");
+  displayRole();
 }
 
-/**
- * Displays the role (spy or civilian) and word to the current player.
- */
 function displayRole() {
-    if (currentPlayerIndex < players.length) {
-        playerLabel.innerText = `Player ${currentPlayerIndex + 1}`;
-        imageContainer.classList.add("hidden"); // Hide image by default
-
-        if (players[currentPlayerIndex].isSpy) {
-            roleText.innerText = "You are the SPY!";
-            roleImage.src = ""; // Clear image if spy
-            imageContainer.classList.add("hidden");
-        } else {
-            roleText.innerText = `You are a CIVILIAN. The word is: "${chosenWordObject.word}". The clue is: "${chosenWordObject.clue}"`;
-            roleImage.src = ""; // Clear image if civilian
-            imageContainer.classList.add("hidden");
-        }
-
-        roleActionButton.innerText = "Reveal Role";
-        roleActionButton.onclick = showRoleDetails;
-    } else {
-        startVotingPhase();
-    }
-}
-
-/**
- * Shows the role details (image and full text) for the current player.
- */
-function showRoleDetails() {
-    imageContainer.classList.remove("hidden");
-    roleActionButton.innerText = "Hide Role & Pass";
-    roleActionButton.onclick = hideRoleAndPass;
-}
-
-/**
- * Hides the role details and prepares for the next player or voting.
- */
-function hideRoleAndPass() {
-    currentPlayerIndex++;
-    if (currentPlayerIndex < players.length) {
-        displayRole();
-    } else {
-        startVotingPhase();
-    }
-}
-
-/**
- * Initiates the voting phase, displaying buttons for each player.
- */
-function startVotingPhase() {
+  if (currentPlayerIndex < players.length) {
+    playerLabel.innerText = `Player ${currentPlayerIndex + 1}`;
+    roleText.innerText = "Tap the button below to reveal your role.";
+    roleActionButton.innerText = "Reveal Role";
+    roleActionButton.onclick = showRoleDetails;
+  } else {
     roleRevealSection.classList.add("hidden");
-    votingSection.classList.remove("hidden");
-
-    voteButtonsContainer.innerHTML = "";
-    votes = {}; // Reset votes for new round
-
-    for (let i = 0; i < players.length; i++) {
-        const button = document.createElement("button");
-        button.innerText = `Player ${i + 1}`;
-        button.onclick = () => recordVote(i);
-        voteButtonsContainer.appendChild(button);
-        votes[i] = 0; // Initialize vote count for each player
-    }
+    startVotingPhase();
+  }
 }
 
-/**
- * Records a vote for a specific player and checks if voting is complete.
- * @param {number} votedPlayerIndex - The index of the player being voted for.
- */
-function recordVote(votedPlayerIndex) {
-    votes[votedPlayerIndex]++;
-    // In a real game, you'd have each player secretly cast a vote,
-    // and then reveal. This simple version just increments a public counter.
-    // You might need a similar reveal/hide mechanism for voting:
-    // "Player X, cast your vote" -> Reveal buttons -> "Hide & Pass Vote"
-    // For now, it proceeds once total clicks equals player count.
+function showRoleDetails() {
+  const currentPlayer = players[currentPlayerIndex];
+  if (currentPlayer.isSpy) {
+    roleText.innerText = "You are the SPY!";
+  } else {
+    roleText.innerText = `You are a CIVILIAN.\nWord: "${chosenWordObject.word}"\nClue: "${chosenWordObject.clue}"`;
+  }
 
-    const totalVotesCast = Object.values(votes).reduce((sum, count) => sum + count, 0);
-    // This condition needs to be more robust for a real voting system where each player votes once.
-    // For simplicity, this continues accumulating votes directly.
-    if (totalVotesCast === players.length) { // Assuming each player will click one button
-        checkResult();
-    } else {
-        // You might want to hide voting buttons after one vote per 'turn'
-        // and add a "Next Player" button.
-        // For simplicity, this continues accumulating votes directly.
-    }
+  roleActionButton.innerText = "Hide Role & Pass to Next Player";
+  roleActionButton.onclick = hideRoleAndPass;
 }
 
-/**
- * Determines the outcome of the game based on the votes.
- */
-function checkResult() {
-    let mostVotedPlayerIndex = -1;
-    let maxVotes = 0;
-    let tied = false;
+function hideRoleAndPass() {
+  currentPlayerIndex++;
+  roleText.innerText = ""; // Clear role before next player
+  displayRole();
+}
 
-    // Convert votes object to an array to easily sort or iterate
-    const voteCounts = Object.keys(votes).map(playerIndex => ({
-        playerIndex: parseInt(playerIndex),
-        count: votes[playerIndex]
-    }));
+function startVotingPhase() {
+  votingSection.classList.remove("hidden");
+  voteButtonsContainer.innerHTML = "";
+  for (let i = 0; i < players.length; i++) {
+    const btn = document.createElement("button");
+    btn.innerText = `Vote Player ${i + 1}`;
+    btn.onclick = () => handleVote(i);
+    voteButtonsContainer.appendChild(btn);
+  }
+}
 
-    // Sort in descending order of votes
-    voteCounts.sort((a, b) => b.count - a.count);
+function handleVote(votedIndex) {
+  votes[votedIndex] = (votes[votedIndex] || 0) + 1;
 
-    if (voteCounts.length > 0) {
-        maxVotes = voteCounts[0].count;
-        mostVotedPlayerIndex = voteCounts[0].playerIndex;
+  if (Object.keys(votes).length === players.length) {
+    revealResults();
+  } else {
+    alert("Vote recorded. Please pass to next player.");
+  }
+}
 
-        // Check for ties among the top vote-getters
-        if (voteCounts.length > 1 && voteCounts[1].count === maxVotes) {
-            tied = true;
-        }
+function revealResults() {
+  votingSection.classList.add("hidden");
+  resultSection.classList.remove("hidden");
+
+  let maxVotes = 0;
+  let suspectedSpy = -1;
+
+  for (const index in votes) {
+    if (votes[index] > maxVotes) {
+      maxVotes = votes[index];
+      suspectedSpy = parseInt(index);
     }
+  }
 
-    const resultTextElement = document.getElementById("resultText");
-    votingSection.classList.add("hidden");
-    resultSection.classList.remove("hidden");
-
-    if (tied) {
-        resultTextElement.innerText = `It's a tie! The real SPY was Player ${spyIndex + 1}. Spy wins! The word was: "${chosenWordObject.word}".`;
-    } else if (mostVotedPlayerIndex === spyIndex) {
-        resultTextElement.innerText = `Player ${spyIndex + 1} was the SPY! Civilians win! The word was: "${chosenWordObject.word}".`;
-    } else {
-        resultTextElement.innerText = `Wrong guess! The real SPY was Player ${spyIndex + 1}. Spy wins! The word was: "${chosenWordObject.word}".`;
-    }
+  const resultText = document.getElementById("resultText");
+  if (players[suspectedSpy].isSpy) {
+    resultText.innerText = `Correct! Player ${suspectedSpy + 1} was the SPY!`;
+  } else {
+    resultText.innerText = `Wrong! Player ${suspectedSpy + 1} was not the SPY.\nPlayer ${spyIndex + 1} was the real SPY.`;
+  }
 }
